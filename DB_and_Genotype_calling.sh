@@ -30,7 +30,8 @@ ls *gvcf.gz > gvcf.list  # This creates a text file with all the
 mkdir -p ${FILENAME}_DB; rm -r ${FILENAME}_DB
 
 ##run GATK database import (2nd step)
-gatk GenomicsDBImport -V gvcf.list \ --genomicsdb-workspace-path ${FILENAME}_DB
+gatk GenomicsDBImport -V gvcf.list \
+--genomicsdb-workspace-path ${FILENAME}_DB
 --intervals NC_004029.2
 
 ##run GATK genotype GVCF (3rd step)
